@@ -7,7 +7,7 @@ api = 'http://localhost:5001'
 def index():
     animal = requests.get(api + '/animal')
     sound = requests.post(api + '/noise/' + animal)
-    return("the " + animal + " goes " + sound)
+    return("the " + str(animal.json()["data"]) + " goes " + str(sound))
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True, host='0.0.0.0')

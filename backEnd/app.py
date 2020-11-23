@@ -6,7 +6,7 @@ animals = {'cow':'moo', 'dog':'woof', 'cat':'meow', 'sheep':'baaaa', 'tom':'AAAA
 
 @app.route('/animal')
 def get_animal():
-    return jsonify(choice(animals).key())
+    return jsonify({"data":choice(animals).key()})
 
 @app.route('/noise/<string:animal>', methods=['POST'])
 def get_sound(animal):
