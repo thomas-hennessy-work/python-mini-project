@@ -1,11 +1,12 @@
-from flask import Flask
+from flask import Flask, jsonify
+from random import choice
 app = Flask(__name__)
 
 animals = {'cow':'moo', 'dog':'woof', 'cat':'meow', 'sheep':'baaaa', 'tom':'AAAAAAAAAAA'}
 
 @app.route('/animal')
 def get_animal():
-    return jsonify(random.choice(animals).key())
+    return jsonify(choice(animals).key())
 
 @app.route('/noise/<string:animal>', methods=['POST'])
 def get_sound(animal):
