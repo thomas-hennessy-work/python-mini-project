@@ -10,7 +10,6 @@ def get_animal():
 
 @app.route('/noise/<string:animal>', methods=['POST'])
 def get_sound(animal):
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+animal)
     return jsonify({'data':animals[animal]})
 
 if __name__ == '__main__':
