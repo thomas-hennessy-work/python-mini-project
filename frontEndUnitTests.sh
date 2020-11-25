@@ -1,5 +1,5 @@
 #!/bin/bash
-bash ./createImages.sh
+docker build -f frontEnd/Dockerfile -t appfrontend:miniproject .
 
 docker stop frontendunittests
 docker rm frontendunittests
