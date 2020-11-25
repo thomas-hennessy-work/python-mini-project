@@ -1,7 +1,7 @@
 from flask import Flask
 import requests
 app = Flask(__name__)
-api = 'http://localhost:5001'
+api = 'http://animal-app_backEnd:5001'
 
 @app.route('/')
 def index():
