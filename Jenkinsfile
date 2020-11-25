@@ -3,8 +3,8 @@ pipeline{
     stages{
         stage('unit tests'){
             steps{
-                sh '''sudo apt install python3 python3-pip
-                    pip install -r requierments.txt
+                sh '''sudo apt install python3 python3-pip -y
+                    pip3 install -r requierments.txt
                     pytest --cov frontEnd/'''
             }
         }
