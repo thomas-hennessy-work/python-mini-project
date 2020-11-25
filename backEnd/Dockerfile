@@ -9,8 +9,8 @@ COPY ./requierments.txt .
 
 RUN pip install -r requierments.txt
 
-COPY . .
+COPY ./backEnd .
 
-EXPOSE 5000
+EXPOSE 5001
 
 ENTRYPOINT ["python", "backEndApp.py"]
