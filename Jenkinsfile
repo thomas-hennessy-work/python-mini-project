@@ -3,8 +3,7 @@ pipeline{
     stages{
         stage('unit tests'){
             steps{
-                sh "pip3 install -r requierments.txt"
-                sh "pytest --cov frontend/"
+                sh "bash unit-test.sh"
             }
         }
         stage('build and run'){
