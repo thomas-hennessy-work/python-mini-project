@@ -8,7 +8,7 @@ pipeline{
         }
         stage('build and run'){
             steps{
-                sh "bash createImagesLaunchSwarm.sh"
+                sh "bash launchSwarm.sh"
             }
         }
     }
