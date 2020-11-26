@@ -13,6 +13,8 @@ pipeline{
         }
         stage('run'){
             steps{
+                sh'''curl https://get.docker.com | sudo bash
+                sudo usermod -aG docker $(whoami) '''
                 sh'''swarm init
                 bash scripts/launchSwarm.sh'''
             }
