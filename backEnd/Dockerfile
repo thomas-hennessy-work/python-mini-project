@@ -9,7 +9,7 @@ COPY ./requierments.txt .
 
 RUN pip install -r requierments.txt
 
-COPY ./backEnd .
+COPY . .
 
 EXPOSE 5001
 

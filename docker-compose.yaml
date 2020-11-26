@@ -10,7 +10,6 @@ services:
   backEnd:
     image: appbackend:miniproject
     ports:
-    - published: 5001
-      target: 5001
+    - target: 5001
     deploy:
       replicas: 1

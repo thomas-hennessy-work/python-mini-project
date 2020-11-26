@@ -3,12 +3,12 @@ pipeline{
     stages{
         stage('unit tests'){
             steps{
-                sh "bash frontEndUnitTests.sh" 
+                sh "bash scripts/frontEndUnitTests.sh" 
             }
         }
         stage('build and run'){
             steps{
-                sh "bash launchSwarm.sh"
+                sh "bash scripts/launchSwarm.sh"
             }
         }
     }

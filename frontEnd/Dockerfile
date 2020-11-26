@@ -9,8 +9,7 @@ COPY ./requierments.txt .
 
 RUN pip install -r requierments.txt
 
-COPY ./frontEnd .
-RUN ls
+COPY . .
 
 EXPOSE 5000
 
