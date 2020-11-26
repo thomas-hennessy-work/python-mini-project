@@ -6,9 +6,10 @@ pipeline{
                 sh "bash scripts/frontEndUnitTests.sh" 
             }
         }
-        stage('build and run'){
+        stage('build'){
             steps{
-                sh "bash scripts/launchSwarm.sh"
+                sh '''docker build -f frontEnd/Dockerfile -t appfrontend:miniproject frontEnd/
+                docker build -f backEnd/Dockerfile -t appbackend:miniproject backEnd/'''
             }
         }
     }
