@@ -11,10 +11,5 @@ pipeline{
                 sh "bash scripts/createImages.sh"
             }
         }
-        stage('run'){
-            steps{
-
-            }
-        }
     }
 }
