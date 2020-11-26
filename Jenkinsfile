@@ -13,7 +13,8 @@ pipeline{
         }
         stage('run'){
             steps{
-                sh"bash scripts/launchSwarm.sh"
+                sh'''swarm init
+                bash scripts/launchSwarm.sh'''
             }
         }
     }
