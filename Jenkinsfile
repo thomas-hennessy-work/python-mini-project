@@ -1,15 +1,19 @@
 pipeline{
     agent any
     stages{
-        stage('unit tests'){
+        stage('unit test'){
             steps{
                 sh "bash scripts/frontEndUnitTests.sh" 
             }
         }
         stage('build'){
             steps{
-                sh '''docker build -f frontEnd/Dockerfile -t appfrontend:miniproject frontEnd/
-                docker build -f backEnd/Dockerfile -t appbackend:miniproject backEnd/'''
+                sh "bash scripts/buildStage.sh"
+            }
+        }
+        stage('run'){
+            steps{
+                sh"bash scripts/launchSwarm.sh"
             }
         }
     }
