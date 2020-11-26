@@ -8,7 +8,8 @@ pipeline{
         }
         stage('build'){
             steps{
-                sh "bash scripts/createImages.sh"
+                sh '''docker build -f frontEnd/Dockerfile -t appfrontend:miniproject frontEnd/
+                docker build -f backEnd/Dockerfile -t appbackend:miniproject backEnd/'''
             }
         }
     }
