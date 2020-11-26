@@ -3,8 +3,7 @@ services:
   frontEnd:
     image: appfrontend:miniproject
     ports:
-    - published: 5000
-      target: 5000
+    - target: 5000
     deploy:
       replicas: 1
   backEnd:
@@ -13,3 +12,15 @@ services:
     - target: 5001
     deploy:
       replicas: 1
+  nginx:
+    image: nginx:latest
+    ports:
+    - published: 80
+      target: 80
+    depends_on:
+    - frontEnd
+      backEnd
+    volumes:
+    - type: bind
+      source: ./nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
