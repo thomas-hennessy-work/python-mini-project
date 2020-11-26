@@ -14,8 +14,7 @@ pipeline{
         }
         stage('run'){
             steps{
-                sh'''docker swarm init
-                bash scripts/launchSwarm.sh'''
+                sh'''bash scripts/launchSwarm.sh'''
             }
         }
     }
