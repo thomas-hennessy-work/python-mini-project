@@ -1,13 +1,13 @@
 version: "3.7"
 services:
   frontEnd:
-    image: appfrontend:miniproject
+    image: thomashennessy/appfrontend:miniproject
     ports:
     - target: 5000
     deploy:
       replicas: 1
   backEnd:
-    image: appbackend:miniproject
+    image: thomashennessy/appbackend:miniproject
     ports:
     - target: 5001
     deploy:
