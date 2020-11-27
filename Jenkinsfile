@@ -8,13 +8,17 @@ pipeline{
         }
         stage('build'){
             steps{
-                sh '''bash scripts/buildStage.sh
-                bash scripts/pushBuilds.sh'''
+                sh "bash scripts/buildStage.sh"
+            }
+        }
+        stage('push build'){
+            steps{
+                sh "bash scripts/pushBuilds.sh"
             }
         }
         stage('run'){
             steps{
-                sh'''bash scripts/launchSwarm.sh'''
+                sh "bash scripts/launchSwarm.sh"
             }
         }
     }
